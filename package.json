@@ -1,0 +1,28 @@
+{
+  "name": "demo-director",
+  "version": "0.2.1",
+  "description": "An MCP server that turns an AI agent into a screen-recording product presenter: native screen capture, human-smooth mouse & keyboard, Chrome DevTools control, spotlight effects, and narration.",
+  "type": "module",
+  "bin": {
+    "demo-director": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build:helper": "bash scripts/build-helper.sh",
+    "check": "node scripts/check-setup.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "screen-recording",
+    "demo",
+    "automation",
+    "computer-use",
+    "presenter",
+    "chrome-devtools"
+  ],
+  "license": "MIT"
+}

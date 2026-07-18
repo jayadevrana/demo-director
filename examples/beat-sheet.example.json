@@ -1,0 +1,46 @@
+{
+  "product": "TaskFlow — a local kanban web app",
+  "url": "http://localhost:3000",
+  "hook": "This is TaskFlow. Your whole week, organized in one board.",
+  "beats": [
+    {
+      "id": 1,
+      "narration": "Meet the board. Three columns, zero clutter.",
+      "actions": [
+        { "tool": "chrome_scroll", "args": { "selector": "#board", "durationMs": 1500 } },
+        { "tool": "pause", "args": { "seconds": 1.5 } }
+      ]
+    },
+    {
+      "id": 2,
+      "narration": "Adding a task takes one click.",
+      "actions": [
+        { "tool": "chrome_locate", "args": { "selector": "button.add-task" } },
+        { "tool": "mouse_move", "args": { "x": "«from locate»", "y": "«from locate»", "ms": 800 } },
+        { "tool": "pause", "args": { "seconds": 0.4 } },
+        { "tool": "mouse_click", "args": {} },
+        { "tool": "type_text", "args": { "text": "Ship the demo video", "cps": 12 } },
+        { "tool": "press_key", "args": { "key": "return" } }
+      ]
+    },
+    {
+      "id": 3,
+      "narration": "Drag it forward as you make progress.",
+      "actions": [
+        { "tool": "chrome_locate", "args": { "selector": ".card:last-child" } },
+        { "tool": "chrome_locate", "args": { "selector": "#col-doing" } },
+        { "tool": "mouse_drag", "args": { "x1": "«card»", "y1": "«card»", "x2": "«column»", "y2": "«column»", "ms": 1200 } }
+      ]
+    },
+    {
+      "id": 4,
+      "narration": "And everything you finish, celebrated right here.",
+      "actions": [
+        { "tool": "chrome_highlight", "args": { "selector": "#col-done", "style": "spotlight" } },
+        { "tool": "pause", "args": { "seconds": 2 } },
+        { "tool": "chrome_clear_highlight", "args": {} }
+      ]
+    }
+  ],
+  "finale": "TaskFlow. Plan less, finish more."
+}
